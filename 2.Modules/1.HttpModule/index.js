@@ -1,11 +1,14 @@
 const http = require('node:http');
-const port = 64000;
+const port = 8089;
 
 const server = http.createServer((req, res) => {
-    console.log(req);
-    res.write("hello my site is nice");
-    res.write(" dev is ut");
-    res.end("nice");
+    const url = req.url;
+
+    if(url == "/") {
+        res.end("welcome");
+    } else if (url === "/abouts") {
+        res.end("utkarsh website creator");
+    }
 });
 
 server.listen(port, () => {
