@@ -382,30 +382,57 @@ console.log("a is " + a);
 //         console.log("cleanup activity");
 //     });
 
-async function fetchPokemon() {
-    try {
-        const data = await fetch(url);
-        const jsonData = await data.json();
-        console.log("play with json data");
-        console.log(jsonData);
-        console.log("logget who is the user");
-    } catch (err) {
-        console.log("handle the error " + err);
-    } finally {
-        console.log("cleanup activity");
-    }
-}
+// async function fetchPokemon() {
+//     try {
+//         const data = await fetch(url);
+//         const jsonData = await data.json();
+//         console.log("play with json data");
+//         console.log(jsonData);
+//         console.log("logget who is the user");
+//     } catch (err) {
+//         console.log("handle the error " + err);
+//     } finally {
+//         console.log("cleanup activity");
+//     }
+// }
 
-fetchPokemon();
+// fetchPokemon();
 
 
-const b = 3 * 2;
-console.log("b is " + b);
+// const b = 3 * 2;
+// console.log("b is " + b);
 
-const c = 4 * 2;
-console.log("c is " + c);
+// const c = 4 * 2;
+// console.log("c is " + c);
 
-const d = 5 * 2;
-console.log("d is " + d);
+// const d = 5 * 2;
+// console.log("d is " + d);
 
 // EOF - end of file / stack is empy 
+
+
+
+// 2 promises 
+// fetch pokemon  -> 
+// fetch score (India vs sa ) -> 
+// fetch 2 more things 
+
+
+
+
+// pokemon.then()
+// await 
+
+
+// Promise.all([fetchPokemon(), fetchScore(), fetchThing1(), fetchThing2()])
+
+
+// faisal server
+// utksrh server
+// saklshiserver
+// animesh server 
+
+// const promiseAnswer = promise.race([faisalServer(), utkshrServer(), saklshiServer(), animeshServer()]);
+
+
+
