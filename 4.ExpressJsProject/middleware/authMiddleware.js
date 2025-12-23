@@ -1,4 +1,5 @@
-const SECRET_PASSWORD = "asdf1234";
+const SECRET_PASSWORD = "asdf1234"; // is this good ? 
+
 
 
 function AuthMiddleware(req, res, next) {
@@ -14,11 +15,6 @@ function AuthMiddleware(req, res, next) {
         // req is bad 
         res.send({message: "error"});
     }
-
-
-
-
-
 
 }
 

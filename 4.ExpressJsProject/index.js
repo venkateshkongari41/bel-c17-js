@@ -1,14 +1,20 @@
 const express = require('express');
 const HomeRoute = require("./routes/HomeRoute");
 const CourseRoute = require("./routes/CourseRoute");
-const AuthMiddleware = require('./middleware/authMiddleware');
+const AuthRoute = require("./routes/AuthRoute");
+const mongoose = require("mongoose");
 const server = express();
-const PORT = 8089;
+
+require('dotenv').config() // it will load all .env variables in process.env
+
+const PORT = process.env.PORT;
 
 // COMMON MIDDLWWARE 
 // not giviing any path means it will work for 100% of the incoming request
 // express.json() is a middleware -  used to parse incoming requests with JSON payloads says go to NEXT handler 
 server.use(express.json());
+
+
 // server.use(AuthMiddleware);
 
 
@@ -40,6 +46,16 @@ server.use("/api/v1/courses", CourseRoute)
 
 //     res.send("user you want to search for gender " + gender + " " + age);
 // });
+
+
+// authentication route
+
+server.use("/api/v1/auth", AuthRoute);
+
+
+mongoose.connect("mongodb://localhost:27017/c17").then(() => {
+    console.log("db connected successfully");
+})
 
 
 server.listen(PORT, () => {
